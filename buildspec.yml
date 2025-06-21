@@ -24,8 +24,9 @@ phases:
 
   build:
     commands:
-      - echo Building the backend project...
-      - mvn clean package
+      - echo Installing dependencies and building Angular project...
+      - npm install
+      - ng build --configuration production
       - echo Building Docker image...
       - docker build -t $ECR_REPO:$IMAGE_TAG .
 
