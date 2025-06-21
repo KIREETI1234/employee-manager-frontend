@@ -9,6 +9,7 @@ env:
 phases:
   install:
     runtime-versions:
+      nodejs: 14
       # java: corretto17
       # docker: 20
     commands:
