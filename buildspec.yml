@@ -9,14 +9,15 @@ env:
 phases:
   install:
     runtime-versions:
-      nodejs: 14
+      nodejs: 16
       # java: corretto17
       # docker: 20
     commands:
       - echo Installing Node.js and Angular CLI...
-      - curl -sL https://rpm.nodesource.com/setup_16.x | bash -
-      - yum install -y nodejs
-      - npm install -g @angular/cli
+      # - curl -sL https://rpm.nodesource.com/setup_16.x | bash -
+      # - yum install -y nodejs
+      # - npm install -g @angular/cli
+      - npm ci
 
   pre_build:
     commands:
@@ -26,8 +27,8 @@ phases:
   build:
     commands:
       - echo Installing dependencies and building Angular project...
-      - npm install
-      - ng build --configuration production
+      # - npm install
+      - npx ng build --configuration production
       - echo Building Docker image...
       - docker build -t $ECR_REPO:$IMAGE_TAG .
 
