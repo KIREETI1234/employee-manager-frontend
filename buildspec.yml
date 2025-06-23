@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_REGION: "us-west-1"
-    ECR_REPO: "084828586975.dkr.ecr.us-east-1.amazonaws.com/three-tier-frontend"
+    ECR_REPO: "084828586975.dkr.ecr.us-west-1.amazonaws.com/three-tier-frontend"
     IMAGE_TAG: "latest"
 
 phases:
